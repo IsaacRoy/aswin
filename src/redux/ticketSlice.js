@@ -38,6 +38,19 @@ const ticketSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+    removeTicketStart: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    removeTicketSuccess: (state, action) => {
+      state.bookedSeats = state.bookedSeats.filter(ticket => ticket.id !== action.payload);
+      state.loading = false;
+      state.error = null;
+    },
+    removeTicketFailure: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
   },
 });
 
@@ -48,5 +61,8 @@ export const {
   bookTicketStart,
   bookTicketSuccess,
   bookTicketFailure,
+  removeTicketStart,
+  removeTicketSuccess,
+  removeTicketFailure,
 } = ticketSlice.actions;
 export default ticketSlice.reducer;

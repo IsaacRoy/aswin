@@ -12,10 +12,11 @@ import { useDispatch } from "react-redux";
 import { auth } from "./firebase/config";
 import { loginSuccess, logout } from "./redux/authSlice";
 
-import Navigation from "./components/Navigation";
+import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import MyTicketsPage from "./pages/MyTicketsPage";
 import NotFound from "./pages/NotFound";
 
 import "./App.css";
@@ -59,13 +60,14 @@ const App = () => (
         <BrowserRouter>
           <AuthObserver />
           <div className="flex flex-col min-h-screen bg-gray-50">
-            <Navigation />
+            <Navbar />
             <main className="flex-1 py-6">
               <div className="container mx-auto px-4">
                 <Routes>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/login" element={<LoginPage />} />
                   <Route path="/register" element={<RegisterPage />} />
+                  <Route path="/tickets" element={<MyTicketsPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>

@@ -93,8 +93,9 @@ const BookTicket = () => {
           </div>
           <Button 
             type="submit" 
-            disabled={loading} 
-            className="w-full"
+            disabled={loading}
+            variant="white"
+            className="w-full button-hover-effect"
           >
             {loading ? 'Booking...' : 'Book Ticket'}
           </Button>
