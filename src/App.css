@@ -58,3 +58,8 @@ body {
 .white-button:hover {
   background-color: #f9fafb !important;
 }
+
+/* Add white text styling for buttons */
+.white-text-button {
+  color: white !important;
+}
